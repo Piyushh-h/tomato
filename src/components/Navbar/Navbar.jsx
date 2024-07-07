@@ -21,9 +21,7 @@ const Navbar = () => {
             <div className="dot"></div>
          </div>
          <button>sign in </button>
-
        </div>
-      
     </div>
   )
 }
