@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <div>
       <Header/>
-      <ExploreMenu category={category} setcategory={setCategory}/>
+      <ExploreMenu category={category} setCategory={setCategory}/>
     </div>
   )
 }
