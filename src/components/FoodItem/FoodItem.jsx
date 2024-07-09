@@ -4,27 +4,16 @@ import { assets } from '../../assets/assets';
 
 const FoodItem = ({ id, name, price, description, image }) => {
     const [itemCount, setItemCount] = useState(0);
-
-    const decrementCount = () => {
-        if (itemCount > 0) {
-            setItemCount(prev => prev - 1);
-        }
-    };
-
-    const incrementCount = () => {
-        setItemCount(prev => prev + 1);
-    };
-
     return (
         <div className='food-item'>
             <div className="food-item-image-container">
                 <img className='food-item-image' src={image} alt="" />
                 {!itemCount
-                    ? <img className='add' onClick={incrementCount} src={assets.add_icon_white} alt="Add" />
+                    ? <img className='add' onClick={()=>setItemCount(prev=>prev+1)} src={assets.add_icon_white} alt="Add" />
                     : <div className='food-item-counter'>
-                        <img className='counter-btn' onClick={decrementCount} src={assets.remove_icon_red} alt="Remove" />
+                        <img onClick={()=>setItemCount(prev=>prev-1)} src={assets.remove_icon_red} alt="Remove" />
                         <p>{itemCount}</p>
-                        <img className='counter-btn' onClick={incrementCount} src={assets.add_icon_green} alt="Add" />
+                        <img onClick={()=>setItemCount(prev=>prev+1)} src={assets.add_icon_green} alt="Add" />
                     </div>
                 }
             </div>
